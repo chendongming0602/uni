@@ -1,0 +1,8 @@
+
+.scr{
+	padding: 50rpx;
+	background: #007AFF;
+	width: 50rpx;
+	position: relative;
+}
+

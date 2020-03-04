@@ -1,0 +1,1 @@
+<view class="tab1"><scorll vue-id="1" bind:__l="__l"></scorll>第一个<view class="scr" style="{{'left:'+(top+'rpx')+';'}}">测试</view></view>
