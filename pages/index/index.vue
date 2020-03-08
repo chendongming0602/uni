@@ -7,7 +7,7 @@
 			<Tab2 v-if="tabArr[1]"  ></Tab2>
 		</view>
 		
-		<Tab v-on:tabs="tabs" ref="tabs" :tabCount="tabCount"></Tab>
+		<Tab v-on:tabs="tabs"   :tabCount="tabCount"></Tab>
 	</view>
 </template>
 
@@ -23,23 +23,19 @@
 				tabArr:[
 					false,
 					false,
+					
 				]
 			}
 		},
 		created() {
-			this.tabArr[this.tabCount]=true;
-		},
-		onPullDownRefresh() {
-			console.log('refresh');
-			setTimeout(function () {
-				uni.stopPullDownRefresh();
-			}, 1000);
+
 		},
 		methods: {
 			 tabs(e){//子组件触发
 				this.tabCount=e;
 				this.tabArr[e]=true
 			 },
+			 
 		},
 		components:{
 			Tab,

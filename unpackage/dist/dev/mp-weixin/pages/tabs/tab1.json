@@ -1,6 +1,6 @@
 {
+  "component": true,
   "usingComponents": {
     "scorll": "/component/scorll"
-  },
-  "component": true
+  }
 }

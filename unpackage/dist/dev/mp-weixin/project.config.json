@@ -8,8 +8,9 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.2",
-	"appid": "touristappid",
+	"appid": "wx167b815548a8dfde",
 	"projectname": "dome1",
+	"cloudfunctionRoot": "cloud/",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {

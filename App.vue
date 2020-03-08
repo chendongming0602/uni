@@ -5,6 +5,11 @@
 				name:1
 			}
 		},
+		created() {
+			//#ifdef MP-WEIXIN
+			wx.cloud.init();
+			//#endif
+		},
 		onLaunch: function() {
 			// console.log(this.name)
 		},

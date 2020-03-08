@@ -754,7 +754,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7082,7 +7082,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7103,14 +7103,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7186,7 +7186,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7611,9 +7611,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!*************************************************!*\
-  !*** D:/gongzuo/uni-app/dome1/dome1/pages.json ***!
-  \*************************************************/
+/*!*****************************************!*\
+  !*** D:/gongzuo/uni-app/uni/pages.json ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8518,9 +8518,9 @@ module.exports = {"_from":"@dcloudio/uni-stat@alpha","_id":"@dcloudio/uni-stat@2
 
 /***/ }),
 /* 7 */
-/*!******************************************************************!*\
-  !*** D:/gongzuo/uni-app/dome1/dome1/pages.json?{"type":"style"} ***!
-  \******************************************************************/
+/*!**********************************************************!*\
+  !*** D:/gongzuo/uni-app/uni/pages.json?{"type":"style"} ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8529,14 +8529,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 8 */
-/*!*****************************************************************!*\
-  !*** D:/gongzuo/uni-app/dome1/dome1/pages.json?{"type":"stat"} ***!
-  \*****************************************************************/
+/*!*********************************************************!*\
+  !*** D:/gongzuo/uni-app/uni/pages.json?{"type":"stat"} ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "" };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "appid": "__UNI__66BF4D3" };exports.default = _default;
 
 /***/ }),
 /* 9 */,
@@ -8662,6 +8662,77 @@ function normalizeComponent (
   }
 }
 
+
+/***/ }),
+/* 15 */
+/*!***********************************************!*\
+  !*** D:/gongzuo/uni-app/uni/utils/request.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {var _config = __webpack_require__(/*! ./config.js */ 16);
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
+Request = /*#__PURE__*/function () {
+  function Request(arg) {_classCallCheck(this, Request);
+
+  }_createClass(Request, [{ key: "request", value: function request()
+    {var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},path = _ref.path,_ref$method = _ref.method,method = _ref$method === void 0 ? "GET" : _ref$method,_ref$data = _ref.data,data = _ref$data === void 0 ? {} : _ref$data,_ref$isMsg = _ref.isMsg,isMsg = _ref$isMsg === void 0 ? false : _ref$isMsg;
+      var header = {
+        'XX-Wxapp-AppId': _config.config.appid,
+        'XX-Device-Type': 'wxapp',
+        'SERVERID': _config.config.serverid,
+        'XX-Token': "",
+        'OPENID': "",
+        'XX-Device-Party': "" };
+
+      return new Promise(function (reslove, reject) {
+        uni.request({
+          url: "".concat(_config.config.apiHost).concat(path),
+          data: data,
+          method: method,
+          header: header,
+          success: function success(res) {
+            var data = res.data;
+            if (res.statusCode === 2 || data.code === 1) {
+              if (isMsg) {
+                reslove(data);
+              } else {
+                reslove(data.data);
+              };
+              return;
+            };
+            reject();
+          },
+          fail: reject });
+
+      });
+    } }]);return Request;}();
+;
+
+var request = new Request().request;
+_vue.default.prototype.request = request;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 16 */
+/*!**********************************************!*\
+  !*** D:/gongzuo/uni-app/uni/utils/config.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.config = void 0;var config = {
+  'appName': '聚蜜囍', // 必填
+  'appid': 'wx167b815548a8dfde', // 必填
+  'serverid': 'jw5afa6970674c1t9a',
+  'wxCloudId': 'server-agw33', // 小程序云开发的实例id
+  'version': 'v1.4.4', // 必填
+  'apiHost': 'https://api.jumixi.com' // 蜜喜云
+  // 'apiHost': 'https://marry.yazai.com/api' // 正式接口地址
+};exports.config = config;
 
 /***/ })
 ]]);
