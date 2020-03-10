@@ -1,6 +1,6 @@
 <template>
 	<view class="tab1">
-		<Scorll :pulldown="pulldown" :reachbottom="reachbottom">
+		<Scorll v-on:pulldown="pulldown" v-on:reachbottom="reachbottom">
 			<!-- 刷新动画 -->
 			<view class="pulldown-loadng" slot="pulldown">
 				<view class="loading-icon-text">
@@ -10,7 +10,7 @@
 			</view>
 			<!-- 内容 -->
 			<view slot="content">
-				<view class="list" v-for="(t,i) in arr" :key="i">
+				<view class="list" v-for="(t,i) in arr" :key="i" @click="aaa">
 					{{i}}
 				</view>
 			</view>
@@ -29,12 +29,20 @@
 			}
 		},
 		methods:{
-			pulldown(e){//刷新
+			async pulldown(e){//刷新
 				let {stop}=e;
 				setTimeout(()=>{
 					stop()//结束
 				},500)
 			},
+      aaa(){
+        console.log(getApp())
+      },
+      async listEvent(e){
+        await this.request({
+          path:"/operate/AdPhoto/main",
+        });
+      },
 			reachbottom(e){//加载
 				let {stop}=e;
 				setTimeout(()=>{
@@ -43,7 +51,8 @@
 			},
 		},
 		created() {
-			let arr=[]
+      
+			var arr=[],that=this;
 			for(let i=0;i<50;i++){
 				arr.push(i)
 			};

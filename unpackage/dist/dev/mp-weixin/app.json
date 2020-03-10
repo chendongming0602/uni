@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/detali/detail"
   ],
   "subPackages": [],
   "window": {
@@ -10,5 +11,5 @@
     "backgroundColor": "#F8F8F8"
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap78.json"
+  "sitemapLocation": "sitemap33.json"
 }

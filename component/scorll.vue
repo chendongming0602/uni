@@ -24,7 +24,6 @@
 
 <script>
 	export default{
-		props:["reachbottom","pulldown"],//两个函数（加载，刷新）
 		data(){
 			return {
 				offset: 0,
@@ -37,15 +36,15 @@
 		},
 		methods:{
 			bindscrolltolower: function (e) {
-			      if ( this.lock) return;//可以从父组件传值统一控制上拉加载结束
-			      this.lock = true;
-				  this.reachbottom({//上拉加载
-					stop: () => {
-					  this.lock = false;
-					}
-				  });
-			     
-			    },
+        if ( this.lock) return;//可以从父组件传值统一控制上拉加载结束
+        this.lock = true;
+        //上拉加载
+        this.$emit("reachbottom",{
+          stop: () => {
+            this.lock = false;
+          }
+        });
+			 },
 			bindscrolltoupper: function (e) {
 			  this.onTheTop = true;
 			},
@@ -84,14 +83,14 @@
 				if (this.offset < 100) {
 					this.offset=100;
 				}
-				 // 下拉刷新
-				this.pulldown({
+        // 下拉刷新
+        this.$emit("pulldown",{
 					stop:()=>{
 						setTimeout(() => {
 						  this.offset=0
 						}, 600);
 					}
-				})
+				});
 			   
 			  } else {
 				  this.offset=0

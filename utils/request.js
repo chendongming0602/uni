@@ -13,7 +13,7 @@ class Request{
 		        'OPENID': "",
 		        'XX-Device-Party': ""
 		      };
-		return new Promise((reslove,reject)=>{
+		return  new Promise((reslove,reject)=>{
 			uni.request({
 				url:`${config.apiHost}${path}`,
 				data,
@@ -29,7 +29,7 @@ class Request{
 						};
 						return 
 					};
-					reject()
+					reject(res)
 				},
 				fail:reject
 			})

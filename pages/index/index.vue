@@ -19,7 +19,7 @@
 		data() {
 			return {
 				title: 'Hello',
-				tabCount:0,
+				tabCount:1,
 				tabArr:[
 					false,
 					false,
@@ -28,7 +28,7 @@
 			}
 		},
 		created() {
-
+      this.tabArr[this.tabCount]=true;
 		},
 		methods: {
 			 tabs(e){//子组件触发

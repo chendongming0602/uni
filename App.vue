@@ -8,6 +8,7 @@
 		created() {
 			//#ifdef MP-WEIXIN
 			wx.cloud.init();
+      
 			//#endif
 		},
 		onLaunch: function() {

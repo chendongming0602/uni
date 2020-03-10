@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"component/tab":1,"pages/tabs/tab1":1,"component/scorll":1};
+/******/ 		var cssChunks = {"pages/tabs/tab1":1,"component/tab":1,"component/scorll":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"component/tab":"component/tab","pages/tabs/tab1":"pages/tabs/tab1","pages/tabs/tab2":"pages/tabs/tab2","component/scorll":"component/scorll"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"pages/tabs/tab1":"pages/tabs/tab1","component/tab":"component/tab","pages/tabs/tab2":"pages/tabs/tab2","component/scorll":"component/scorll"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

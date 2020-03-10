@@ -1,0 +1,1 @@
+<view data-event-opts="{{[['tap',[['detailE',['$event']]]]]}}" bindtap="__e">是我啊</view>
