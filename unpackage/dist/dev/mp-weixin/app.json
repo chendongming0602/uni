@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/detali/detail"
+    "pages/detali/detail",
+    "pages/vipAppIy/step1/step1",
+    "pages/vipAppIy/phoneBox/phoneBox"
   ],
   "subPackages": [],
   "window": {
@@ -10,6 +12,5 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap33.json"
+  "usingComponents": {}
 }

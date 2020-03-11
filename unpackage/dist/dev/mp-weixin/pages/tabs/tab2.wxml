@@ -1,1 +1,1 @@
-<view>第二个<button type="primary" open-type="getUserInfo" data-event-opts="{{[['getuserinfo',[['accessPermission',['$event']]]]]}}" bindgetuserinfo="__e">授权</button></view>
+<view>第二个</view>

@@ -1,34 +1,39 @@
 {
-	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.9.2",
-	"appid": "wx167b815548a8dfde",
-	"projectname": "dome1",
-	"cloudfunctionRoot": "cloud/",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": []
-		}
-	}
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.9.2",
+  "appid": "wx167b815548a8dfde",
+  "projectname": "dome1",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": 0,
+      "list": [
+        {
+          "name": "注册",
+          "query": "",
+          "id": 0,
+          "pathName": "pages/vipAppIy/step1/step1"
+        }
+      ]
+    }
+  },
+  "cloudfunctionRoot": "./cloud/"
 }

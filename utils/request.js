@@ -1,17 +1,19 @@
 import {config} from "./config.js";
-import Vue from 'vue'
+import Vue from 'vue';
 class Request{
 	constructor(arg) {
 	    
 	}
 	request({path,method="GET",data={},isMsg=false}={}){
+    // uni.setStorageSync('storage_key', 'hello');
+    // return console.log(uni.getStorageSync('storage_key'))
 		const header = {
 		        'XX-Wxapp-AppId': config.appid,
 		        'XX-Device-Type': 'wxapp',
 		        'SERVERID': config.serverid,
-		        'XX-Token': "",
-		        'OPENID': "",
-		        'XX-Device-Party': ""
+		        'XX-Token': uni.getStorageSync('token'),
+		        'OPENID': uni.getStorageSync('openid'),
+		        'XX-Device-Party': uni.getStorageSync('party')
 		      };
 		return  new Promise((reslove,reject)=>{
 			uni.request({

@@ -95,7 +95,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 47));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
 {
   data: function data() {
     return {
@@ -107,16 +107,96 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     wx.cloud.init();
 
 
+
   },
-  onLaunch: function onLaunch() {
-    // console.log(this.name)
-  },
+  onLaunch: function () {var _onLaunch = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(options) {var userRes;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+              this.globalData.userInfo = {};
+              this.globalData.vipInfo = {};
+              this.initInviteInfo(options); //媒人推荐
+              _context.next = 5;return this.login();case 5:userRes = _context.sent;if (!
+              userRes.inBlacklist) {_context.next = 8;break;}return _context.abrupt("return");case 8:if (!
+              userRes.token) {_context.next = 11;break;}_context.next = 11;return (
+                this.userVip());case 11:case "end":return _context.stop();}}}, _callee, this);}));function onLaunch(_x) {return _onLaunch.apply(this, arguments);}return onLaunch;}(),
+
+
+
   onShow: function onShow() {
     // console.log('App Show')
   },
   onHide: function onHide() {
     // console.log('App Hide')
-  } };exports.default = _default;
+  },
+  methods: {
+    initInviteInfo: function initInviteInfo(options) {//媒人
+      this.globalData.inviteID = {};
+      try {
+        //邀请信息处理  start
+        // options.query.inviteID 邀请人id, 从别人发出的邀请进入，需要给邀请人增加积分，保存后在手机号注册接口传入
+        if (/^\d+$/.test(options.query.inviteID)) {
+          this.globalData.inviteID.inviteID = options.query.inviteID;
+        }
+
+        var scene = decodeURIComponent(options.query.scene);
+        if (scene && scene.indexOf('cupidcode=') > -1) {
+
+          var map = scene.split('&');
+          var obj = {};
+          map.forEach(function (it) {
+            var nameval = it.split('=');
+            obj[nameval[0]] = nameval[1];
+          });
+          // 金牌媒人活动携带id，进入后需在登录接口传入，给媒人增加赏金
+          if (obj.cupidcode) {
+            this.globalData.inviteID.cupidcode = obj.cupidcode;
+            uni.setStorage({
+              key: "cupidcode",
+              data: obj.cupidcode });
+
+          }
+
+        } else {
+
+          var cupidcode = uni.getStorageSync('cupidcode');
+          if (cupidcode) {
+            this.globalData.inviteID.cupidcode = cupidcode;
+          }
+
+        }
+        // console.log(this)
+        //end
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    login: function () {var _login = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _this = this;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:return _context2.abrupt("return",
+                new Promise(function (reslove, reject) {
+                  uni.login({
+                    success: function success(res) {
+                      _this.request({
+                        path: "/wxapp/public/miniInit",
+                        method: "POST",
+                        data: {
+                          code: res.code } }).
+
+                      then(function (res) {
+                        uni.setStorageSync('token', res.token);
+                        uni.setStorageSync('openid', res.openid);
+                        uni.setStorageSync('party', res.party);
+                        _this.globalData.userInfo = _objectSpread({}, res);
+                        reslove(res);
+                      });
+
+                    } });
+
+                }));case 1:case "end":return _context2.stop();}}}, _callee2, this);}));function login() {return _login.apply(this, arguments);}return login;}(),
+
+    userVip: function () {var _userVip = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var _this2 = this;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:return _context3.abrupt("return",
+                this.request({
+                  path: "/member/baseinfo/isMember" }).
+                then(function (res) {
+                  _this2.globalData.vipInfo = _objectSpread({}, res);
+                }));case 1:case "end":return _context3.stop();}}}, _callee3, this);}));function userVip() {return _userVip.apply(this, arguments);}return userVip;}() } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 /* 12 */

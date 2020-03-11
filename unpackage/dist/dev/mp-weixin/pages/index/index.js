@@ -142,7 +142,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var Tab = function Tab() {return __webpack_require__.e(/*! import() | component/tab */ "component/tab").then(__webpack_require__.bind(null, /*! ../../component/tab.vue */ 23));};var Tab1 = function Tab1() {return Promise.all(/*! import() | pages/tabs/tab1 */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/tabs/tab1")]).then(__webpack_require__.bind(null, /*! ../tabs/tab1.vue */ 30));};var Tab2 = function Tab2() {return __webpack_require__.e(/*! import() | pages/tabs/tab2 */ "pages/tabs/tab2").then(__webpack_require__.bind(null, /*! ../tabs/tab2.vue */ 40));};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var Tab = function Tab() {return __webpack_require__.e(/*! import() | component/tab */ "component/tab").then(__webpack_require__.bind(null, /*! ../../component/tab.vue */ 35));};var Tab1 = function Tab1() {return Promise.all(/*! import() | pages/tabs/tab1 */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/tabs/tab1")]).then(__webpack_require__.bind(null, /*! ../tabs/tab1.vue */ 42));};var Tab2 = function Tab2() {return __webpack_require__.e(/*! import() | pages/tabs/tab2 */ "pages/tabs/tab2").then(__webpack_require__.bind(null, /*! ../tabs/tab2.vue */ 52));};var _default =
 
 
 
