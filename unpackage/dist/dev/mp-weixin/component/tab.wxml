@@ -1,1 +1,0 @@
-<view class="tabBox"><block wx:for="{{list}}" wx:for-item="t" wx:for-index="i" wx:key="i"><view data-event-opts="{{[['tap',[['tabEvent',[i]]]]]}}" class="{{['tabList',tabCount!==i?'tabListColor':'']}}" bindtap="__e"><image class="tabImg" src="{{tabCount===i?t.url:t.urlNo}}"></image>{{''+t.name+''}}</view></block></view>

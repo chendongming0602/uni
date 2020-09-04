@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "uni-app",
-  "usingComponents": {
-    "tab": "/component/tab",
-    "tab1": "/pages/tabs/tab1",
-    "tab2": "/pages/tabs/tab2"
-  }
-}
