@@ -7672,9 +7672,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!*****************************************!*\
-  !*** D:/ming/self/uni/uni插件/pages.json ***!
-  \*****************************************/
+/*!*******************************!*\
+  !*** D:/uni/uni插件/pages.json ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -8679,9 +8679,9 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 
 /***/ }),
 /* 7 */
-/*!*********************************************************!*\
-  !*** D:/ming/self/uni/uni插件/pages.json?{"type":"stat"} ***!
-  \*********************************************************/
+/*!***********************************************!*\
+  !*** D:/uni/uni插件/pages.json?{"type":"stat"} ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8690,9 +8690,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 8 */
-/*!**********************************************************!*\
-  !*** D:/ming/self/uni/uni插件/pages.json?{"type":"style"} ***!
-  \**********************************************************/
+/*!************************************************!*\
+  !*** D:/uni/uni插件/pages.json?{"type":"style"} ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
