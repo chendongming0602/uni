@@ -1,17 +1,17 @@
 {
-  "pages": [
-    "pages/index/index"
-  ],
-  "subPackages": [],
-  "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni插件",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
-  },
-  "uniStatistics": {
-    "enable": true
-  },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap31.json"
+    "pages": [
+        "pages/index/index"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni插件",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    },
+    "uniStatistics": {
+        "enable": true
+    },
+    "usingComponents": {},
+    "sitemapLocation": "sitemap26.json"
 }
