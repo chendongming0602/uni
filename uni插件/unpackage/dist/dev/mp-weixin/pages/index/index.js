@@ -139,11 +139,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pop = function pop() {__webpack_require__.e(/*! require.ensure | components/ming-pop/ming-pop */ "components/ming-pop/ming-pop").then((function () {return resolve(__webpack_require__(/*! @/components/ming-pop/ming-pop.vue */ 23));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pickers = function pickers() {__webpack_require__.e(/*! require.ensure | components/ming-pop/ming-pop */ "components/ming-pop/ming-pop").then((function () {return resolve(__webpack_require__(/*! @/components/ming-pop/ming-pop.vue */ 23));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -174,7 +170,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 {
   data: function data() {
     return {
-      direction: "up" };
+      direction: "below" };
 
   },
   onLoad: function onLoad() {
@@ -188,7 +184,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     } },
 
   components: {
-    pop: pop } };exports.default = _default;
+    pickers: pickers } };exports.default = _default;
 
 /***/ }),
 /* 21 */

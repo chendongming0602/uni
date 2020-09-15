@@ -18,18 +18,22 @@
 			</view>
 		</view>
 
-		<pickers ref="pop" :direction="direction" :width="80">
-        226
-		</pickers>
+		<pop ref="pop" :direction="direction" :is_close="true" :is_mask="true" :width="100">
+
+			<view v-for="t in 5" :key="t">
+				我是：{{direction}}一个弹窗
+			</view>
+
+		</pop>
 	</view>
 </template>
 
 <script>
-	import pickers from "@/components/ming-picker/ming-picker.vue"
+	import pop from "@/components/ming-pop/ming-pop.vue"
 	export default {
 		data() {
 			return {
-				direction: "below"
+				direction: "up"
 			}
 		},
 		onLoad() {
@@ -43,19 +47,18 @@
 			}
 		},
 		components: {
-			pickers
+			pop
 		}
 	}
 </script>
 
 <style scoped>
-
-/* 	.box view {
+	.box view {
 		text-align: center;
 		margin: 20px;
 		background-color: #007AFF;
 		color: #FFFFFF;
 		border-radius: 3px;
 		padding: 10px 0;
-	} */
+	}
 </style>

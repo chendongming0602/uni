@@ -1,5 +1,6 @@
 <template>
-	<view :class="direction==='center'?'box':''">
+	<!-- v-if解决center弹窗位置问题 -->
+  <view :class="direction==='center'?'centers':''" v-if="direction==='center'?open:true">
 		<view class="product-window" :style="{width:width+'%'}" :class="(open ? 'on' : '')+' '+direction">
 			<!-- 兼容h5顶部导航空位 -->
 			<!-- #ifndef MP -->
@@ -52,11 +53,17 @@
 	view {
 		box-sizing: border-box;
 	}
-	.box{
+	.centers{
 		width: 100vw;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+    // height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 	}
 	.product-window {
 		position: fixed;
@@ -71,15 +78,15 @@
 	.below {
 		left: 0;
 		bottom: 0;
-		transform: translate3d(0, 100vh, 0);
-		-webkit-transform: translate3d(0, 100vh, 0);
+		transform: translate3d(0, 100%, 0);
+		-webkit-transform: translate3d(0, 100%, 0);
 	}
 
 	.up {
 		top: 0;
 		left: 0;
-		transform: translate3d(0, -100vh, 0);
-		-webkit-transform: translate3d(0, -100vh, 0);
+		transform: translate3d(0, -100%, 0);
+		-webkit-transform: translate3d(0, -100%, 0);
 	}
 
 	.right {
@@ -98,8 +105,10 @@
 		-webkit-transform: translate3d(-100vw, 0, 0);
 	}
 	.center{
-		transform: translate3d(-100vw, -100vh, 0);
-		-webkit-transform: translate3d(-100vw, -100vh, 0);
+    position: static;
+    -webkit-position: static;
+		transform: translate3d(-100vw, -100%, 0);
+		-webkit-transform: translate3d(-100vw, -100%, 0);
 	}
 	.product-window.on {
 		transform: translate3d(0, 0, 0);
