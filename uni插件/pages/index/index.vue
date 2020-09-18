@@ -1,25 +1,7 @@
 <template>
 	<view>
-		<view class="box">
-			<view @click="open" :data-id="'up'">
-				打开上弹窗
-			</view>
-			<view @click="open" :data-id="'below'">
-				打开下弹窗
-			</view>
-			<view @click="open" :data-id="'left'">
-				打开左弹窗
-			</view>
-			<view @click="open" :data-id="'right'">
-				打开右弹窗
-			</view>
-			<view @click="open" :data-id="'center'">
-				打开中间弹窗
-			</view>
-		</view>
-
-		<pickers ref="pop" :direction="direction" :width="80">
-        226
+		<pickers @address="address" @close="close" :defaultAddress="defaultAddress">
+        <view style="text-align: center;">{{res||'点击我-->选择给五星好评的地址！'}}</view>
 		</pickers>
 	</view>
 </template>
@@ -29,18 +11,20 @@
 	export default {
 		data() {
 			return {
-				direction: "below"
+        //默认选中
+				defaultAddress:["广东省", "广州市", "番禺区"],
+        //选中后的显示值
+        res:""
 			}
-		},
-		onLoad() {
-
 		},
 		methods: {
-			open(e) {
-				this.direction = e.currentTarget.dataset.id;
-				//打开弹窗
-				this.$refs.pop.show();
-			}
+      address(e){
+        console.log("点击了确认")
+        this.res=e.value.join("-");
+      },
+      close(){
+        console.log("点击了取消")
+      }
 		},
 		components: {
 			pickers

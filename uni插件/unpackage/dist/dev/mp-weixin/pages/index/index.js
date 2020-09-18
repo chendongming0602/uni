@@ -139,25 +139,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pickers = function pickers() {__webpack_require__.e(/*! require.ensure | components/ming-pop/ming-pop */ "components/ming-pop/ming-pop").then((function () {return resolve(__webpack_require__(/*! @/components/ming-pop/ming-pop.vue */ 23));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pickers = function pickers() {Promise.all(/*! require.ensure | components/ming-picker/ming-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/ming-picker/ming-picker")]).then((function () {return resolve(__webpack_require__(/*! @/components/ming-picker/ming-picker.vue */ 23));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -170,17 +152,19 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 {
   data: function data() {
     return {
-      direction: "below" };
-
-  },
-  onLoad: function onLoad() {
+      //默认选中
+      defaultAddress: ["广东省", "广州市", "番禺区"],
+      //选中后的显示值
+      res: "" };
 
   },
   methods: {
-    open: function open(e) {
-      this.direction = e.currentTarget.dataset.id;
-      //打开弹窗
-      this.$refs.pop.show();
+    address: function address(e) {
+      console.log("点击了确认");
+      this.res = e.value.join("-");
+    },
+    close: function close() {
+      console.log("点击了取消");
     } },
 
   components: {

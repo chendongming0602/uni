@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "pickers": "/components/ming-pop/ming-pop"
+    "pickers": "/components/ming-picker/ming-picker"
   }
 }
