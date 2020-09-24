@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<pickers @address="address" @close="close" :defaultAddress="defaultAddress">
-        <view style="text-align: center;">{{res||'点击我-->选择给五星好评的地址！'}}</view>
+        <view style="text-align: center;background-color: #42b983;color: #fff;">{{res||'点击我-->选择给五星好评的地址！'}}</view>
 		</pickers>
 	</view>
 </template>

@@ -1,5 +1,5 @@
 ### 一、在需要的页面中导入ming-picker弹窗组件，并在页面中使用该组件：
-- 1、引入时间（演示）：` import pickers from "@/components/ming-picker/ming-picker.vue" `
+- 1、引入（演示）：` import pickers from "@/components/ming-picker/ming-picker.vue" `
 - 2、挂载（演示）：` components: {pickers} `
 - 3、使用（演示）：` <pickers @address="address" @close="close" :defaultAddress="defaultAddress"></pickers> `
 
@@ -12,10 +12,20 @@
 |@close|Event||在点击取消后触发|
 ************************
 ### 三、选中展示值
-- 直接放在组件标签内即可（演示）：` <pickers >
-        <view>我是展示值</view> </pickers> `
+- 直接放在组件标签内即可（演示）：
+` <pickers> <view>我是展示值</view> </pickers> `
 
+*********************
+### 四、特点
+- 已自带地区数据
+- 兼容h5+小程序
+- 可默认选中地址
+- 三级联动（细选到：区级）
+- 含澳门+台湾+xiang港地区！
+- 独立组件，使用方便，体积较小！
 ******************************
-### 四、更多操作步骤可下载插件观看代码注释
+
+### 五、更多操作步骤可下载插件观看代码注释
 ******************************************************
+
 #### 温馨提示：小编主页可获取更多独立组件（感谢支持，感谢五星好评）！
